@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PrivateTransport.Models.Route>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table" id="transportTable">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.startDest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endDest)
+        </th>
+        <!--<th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.freeSeats)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.startDest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endDest)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.freeSeats)
+        </td>
+        <td></td>
+        <!--<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>-->
+    </tr>
+}
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        var table = $("#transportTable").DataTable();
+    </script>
+    
+}

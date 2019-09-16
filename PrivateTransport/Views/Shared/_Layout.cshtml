@@ -1,0 +1,258 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <style>
+        p {
+            margin-top: 20px;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 10.5px;
+        }
+
+        body {
+            font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 15px;
+            line-height: 1.42857143;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+
+        .col-sm-4 {
+            border: inset;
+            height: 250px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: lightcoral;
+        }
+
+
+        .login-dark {
+            height: 1000px;
+            background: #4f5b5d;
+            background-size: cover;
+            position: relative;
+        }
+
+            .login-dark form {
+                max-width: 320px;
+                width: 90%;
+                background-color: #1e2833;
+                padding: 40px;
+                border-radius: 4px;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                color: #fff;
+                box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+            }
+
+            .login-dark .illustration {
+                text-align: center;
+                padding: 15px 0 20px;
+                font-size: 100px;
+                color: #2980ef;
+            }
+
+            .login-dark form .form-control {
+                background: none;
+                border: none;
+                border-bottom: 1px solid #434a52;
+                border-radius: 0;
+                box-shadow: none;
+                outline: none;
+                color: inherit;
+            }
+
+            .login-dark form .btn-primary {
+                background: #214a80;
+                border: none;
+                border-radius: 4px;
+                padding: 11px;
+                box-shadow: none;
+                margin-top: 26px;
+                text-shadow: none;
+                outline: none;
+            }
+
+                .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+                    background: #214a80;
+                    outline: none;
+                }
+
+            .login-dark form .forgot {
+                display: block;
+                text-align: center;
+                font-size: 12px;
+                color: #6f7a85;
+                opacity: 0.9;
+                text-decoration: none;
+            }
+
+                .login-dark form .forgot:hover, .login-dark form .forgot:active {
+                    opacity: 1;
+                    text-decoration: none;
+                }
+
+            .login-dark form .btn-primary:active {
+                transform: translateY(1px);
+            }
+
+
+        .login-dark {
+            height: 1000px;
+            background-size: cover;
+            position: relative;
+        }
+
+            .login-dark form {
+                max-width: 320px;
+                width: 90%;
+                background-color: #1e2833;
+                padding: 40px;
+                border-radius: 4px;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                color: #fff;
+                box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+            }
+
+            .login-dark .illustration {
+                text-align: center;
+                padding: 15px 0 20px;
+                font-size: 100px;
+                color: #2980ef;
+            }
+
+
+        .login-dark form .form-control {
+            background: none;
+            border: none;
+            border-bottom: 1px solid #434a52;
+            border-radius: 0;
+            box-shadow: none;
+            outline: none;
+            color: inherit;
+        }
+
+
+        .login-dark form .btn-primary {
+            background: #214a80;
+            border: none;
+            border-radius: 4px;
+            padding: 11px;
+            box-shadow: none;
+            margin-top: 26px;
+            text-shadow: none;
+            outline: none;
+        }
+
+
+            .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+                background: #214a80;
+                outline: none;
+            }
+
+
+        .login-dark form .forgot {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color: #4f5b5d;
+            opacity: 0.9;
+            text-decoration: none;
+        }
+
+
+            .login-dark form .forgot:hover, .login-dark form .forgot:active {
+                opacity: 1;
+                text-decoration: none;
+            }
+
+
+        .login-dark form .btn-primary:active {
+            transform: translateY(1px);
+        }
+
+        body {
+            opacity: 0;
+        }
+
+            body.all-loaded {
+                opacity: 1;
+            }
+    </style>
+    <noscript>
+        <style>
+            body {
+                opacity: 1;
+            }
+
+            form * {
+                display: inline;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Private Transport", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Transports", "Transports", "Home")</li>
+                    <li>@Html.ActionLink("How it works", "About", "Home")</li>
+
+                    <li>@Html.ActionLink("Add New Route", "CreateRoute", "Home")</li>
+                    <li class="nav-item">
+                       <!-- <form class="form-inline my-2 my-lg-0" id="nav-search" method="get">
+                            <input class="form-control mr-sm-2 nav-element" name="search" type="text" placeholder="Search" value="">
+                            <button class="btn btn-success my-2 my-sm-0 nav-element" type="submit">Search</button>
+                        </form> -->
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <@*p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(window).on("load", function () {
+            $("body").addClass('all-loaded');
+        });
+        $('body').css({
+            position: 'relative',
+            top: '100px',
+        });
+    </script>
+</body>
+</html>
